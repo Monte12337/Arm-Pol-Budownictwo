@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ARM-POL Budownictwo - portfolio zrealizowanych projektów medycznych">
+    <title>Realizacje - ARM-POL Budownictwo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root[data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #fafafa;
+            --text-primary: #222222;
+            --text-secondary: #666666;
+            --accent-color: #C40000;
+            --border-color: #dddddd;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+            --overlay: rgba(0,0,0,0.5);
+        }
+        
+        :root[data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-color: #ff3333;
+            --border-color: #404040;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+            --overlay: rgba(0,0,0,0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        html {
+    scroll-padding-top: 90px;
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            background: var(--bg-primary);
+            padding: 20px 0;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo:hover {
+            opacity: 0.8;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 5px 12px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .page-hero {
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('uploads/hero/hero-construction.jpg') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .page-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+        
+        section {
+    scroll-margin-top: 90px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .projects-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .project-card {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            position: relative;
+        }
+        
+        .project-image::after {
+            content: "🔍";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-image::after {
+            opacity: 0.8;
+        }
+        
+        .project-info {
+            padding: 30px;
+        }
+        
+        .project-info h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        }
+        
+        .lightbox-caption {
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 36px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: #fff;
+            font-size: 36px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        .lightbox-counter {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        footer {
+            background: var(--bg-secondary);
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: 0.3s;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 70px;
+                background: var(--bg-primary);
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-md);
+            }
+            
+            .nav-links.active {
+                max-height: 400px;
+                padding: 20px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            .lightbox-nav {
+                padding: 10px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./" class="logo">ARM-POL</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./">STRONA GŁÓWNA</a></li>
+                <li><a href="o-nas.html">O NAS</a></li>
+                <li><a href="oferta.html">OFERTA</a></li>
+                <li><a href="realizacje.html">REALIZACJE</a></li>
+                <li><a href="partnerzy.html">PARTNERZY</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-hero" data-aos="fade">
+        <h1 data-aos="fade-down">Nasze realizacje</h1>
+    </div>
+
+    <section>
+        <div class="projects-intro" data-aos="fade-up">
+            <p>Prezentujemy wybrane projekty zrealizowane dla placówek medycznych w całej Polsce. Każda realizacja to przykład naszego zaangażowania w tworzenie nowoczesnej infrastruktury medycznej najwyższej jakości.</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card" data-aos="zoom-in" onclick="openLightbox(0)">
+                <img src="https://images.unsplash.com/photo-1581093588401-22f4a6e4c8ba?auto=format&fit=crop&w=800&q=80" 
+                     alt="Centrum Diagnostyczne Warszawa" class="project-image" loading="lazy">
+                <div class="project-info">
+                    <h3>Centrum Diagnostyczne Warszawa</h3>
+                    <div class="project-meta">
+                        <span>📅 2023</span>
+                        <span>💰 12 mln PLN</span>
+                        <span>📐 2500 m²</span>
+                    </div>
+                    <p class="project-description">
+                        Kompleksowa budowa nowoczesnego centrum diagnostycznego z pełnym wyposażeniem: MRI 3T, TK 128-rzędowy, 
+                        mammografia cyfrowa, USG premium. Projekt "pod klucz" zrealizowany w 14 miesięcy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="100" onclick="openLightbox(1)">
+                <img src="https://images.unsplash.com/photo-1503389152951-9f343605f61c?auto=format&fit=crop&w=800&q=80" 
+                     alt="Modernizacja Szpitala Powiatowego Kraków" class="project-image" loading="lazy">
+                <div class="project-info">
+                    <h3>Modernizacja Szpitala Powiatowego Kraków</h3>
+                    <div class="project-meta">
+                        <span>📅 2022</span>
+                        <span>💰 8 mln PLN</span>
+                        <span>📐 3200 m²</span>
+                    </div>
+                    <p class="project-description">
+                        Kompleksowa modernizacja oddziału chirurgii i bloku operacyjnego. Instalacja sal operacyjnych 
+                        klasy czystości ISO 5, system nawiewów laminarnych, nowe instalacje gazów medycznych.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200" onclick="openLightbox(2)">
+                <img src="https://images.unsplash.com/photo-1584985209857-a58c4b3cda82?auto=format&fit=crop&w=800&q=80" 
+                     alt="Prywatna Klinika Gdańsk" class="project-image" loading="lazy">
+                <div class="project-info">
+                    <h3>Prywatna Klinika Gdańsk</h3>
+                    <div class="project-meta">
+                        <span>📅 2023</span>
+                        <span>💰 5 mln PLN</span>
+                        <span>📐 1500 m²</span>
+                    </div>
+                    <p class="project-description">
+                        Budowa ekskluzywnej kliniki medycyny estetycznej i regeneracyjnej. Wykończenia premium, 
+                        nowoczesne gabinety zabiegowe, sale hospitalizacji jednoosobowej, SPA medyczne.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" onclick="openLightbox(3)">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" 
+                     alt="Laboratorium Diagnostyczne Wrocław" class="project-image" loading="lazy">
+                <div class="project-info">
+                    <h3>Laboratorium Diagnostyczne Wrocław</h3>
+                    <div class="project-meta">
+                        <span>📅 2022</span>
+                        <span>💰 3 mln PLN</span>
+                        <span>📐 800 m²</span>
+                    </div>
+                    <p class="project-description">
+                        Adaptacja budynku biurowego na laboratorium medyczne. Instalacja pomieszczeń czystych, 
+                        systemy HVAC dedykowane, automatyka laboratoryjna, system pneumatycznej poczty próbek.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="100" onclick="openLightbox(4)">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" 
+                     alt="Oddział Chirurgii Poznań" class="project-image" loading="lazy">
+                <div class="project-info">
+                    <h3>Oddział Chirurgii Poznań</h3>
+                    <div class="project-meta">
+                        <span>📅 2021</span>
+                        <span>💰 6 mln PLN</span>
+                        <span>📐 2000 m²</span>
+                    </div>
+                    <p class="project-description">
+                        Rozbudowa i modernizacja oddziału chirurgii z nowym blokiem operacyjnym. 
+                        4 sale operacyjne z zapleczem, pomieszczenia intensywnej opieki pooperacyjnej.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200" onclick="openLightbox(5)">
+                <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80" 
+                     alt="Centrum Rehabilitacji Łódź" class="project-image" loading="lazy">
+                <div class="project-info">
+                    <h3>Centrum Rehabilitacji Łódź</h3>
+                    <div class="project-meta">
+                        <span>📅 2023</span>
+                        <span>💰 4 mln PLN</span>
+                        <span>📐 1800 m²</span>
+                    </div>
+                    <p class="project-description">
+                        Budowa specjalistycznego centrum rehabilitacji ortopedycznej. Sale fizjoterapii, 
+                        basen rehabilitacyjny, siłownia medyczna, gabinety zabiegowe, pomieszczenia diagnostyczne.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+            <span class="lightbox-counter" id="lightboxCounter">1 / 6</span>
+            <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">‹</button>
+            <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">›</button>
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <footer data-aos="fade-up">
+        <p>&copy; 2024 ARM-POL Budownictwo Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            offset: 120,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: true
+        });
+
+        // Lightbox functionality
+        const images = [
+            {
+                src: 'https://images.unsplash.com/photo-1581093588401-22f4a6e4c8ba?auto=format&fit=crop&w=1500&q=80',
+                caption: 'Centrum Diagnostyczne Warszawa - Nowoczesne centrum z pełnym wyposażeniem diagnostycznym'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1503389152951-9f343605f61c?auto=format&fit=crop&w=1500&q=80',
+                caption: 'Modernizacja Szpitala Powiatowego Kraków - Oddział chirurgii i blok operacyjny'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1584985209857-a58c4b3cda82?auto=format&fit=crop&w=1500&q=80',
+                caption: 'Prywatna Klinika Gdańsk - Ekskluzywna klinika medycyny estetycznej'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1500&q=80',
+                caption: 'Laboratorium Diagnostyczne Wrocław - Nowoczesne laboratorium medyczne'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1500&q=80',
+                caption: 'Oddział Chirurgii Poznań - Rozbudowa z nowym blokiem operacyjnym'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1500&q=80',
+                caption: 'Centrum Rehabilitacji Łódź - Specjalistyczne centrum rehabilitacji ortopedycznej'
+            }
+        ];
+
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+
+            lightboxImage.src = images[index].src;
+            lightboxCaption.textContent = images[index].caption;
+            lightboxCounter.textContent = `${index + 1} / ${images.length}`;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            openLightbox(currentImageIndex);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    changeImage(-1);
+                } else if (e.key === 'ArrowRight') {
+                    changeImage(1);
+                }
+            }
+        });
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        });
+
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

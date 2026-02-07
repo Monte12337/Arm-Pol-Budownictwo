@@ -1,0 +1,269 @@
+✅ ARM-POL - SYSTEM CMS v3.0 (PLAN IMPLEMENTACJI)
+==================================================
+
+📅 Data: 6 lutego 2026
+🎯 Status: 📋 PLAN PRZYGOTOWANY + FUNDAMENT
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ WAŻNA INFORMACJA:
+━━━━━━━━━━━━━━━━━━
+Pełny system CMS (panel jako lustrzane odbicie strony 
+z edycją każdego elementu + galeria zdjęć) to ZŁOŻONY
+projekt wymagający:
+
+1. Backend (PHP + MySQL lub Node.js)
+2. System upload plików
+3. API do zarządzania treścią
+4. Integracja z frontendem
+5. Czas implementacji: 5-7 dni roboczych
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 CO ZOSTAŁO PRZYGOTOWANE:
+━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ content.json - struktura danych (6.8 KB)
+✅ content-loader.js - wczytywanie danych (8 KB)
+✅ Struktura folderów /uploads/
+   - /gallery/ (ogólna galeria)
+   - /hero/ (tła hero section)
+   - /realizacje/ (projekty)
+   - /partnerzy/ (loga)
+✅ PANEL-V3-PLAN.md - pełna dokumentacja (9.8 KB)
+✅ Panel admin v2.1 - funkcjonalny (53 KB)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 FUNDAMENT GOTOWY:
+━━━━━━━━━━━━━━━━━━
+1. ✅ content.json - centralna baza danych
+   - Wszystkie teksty
+   - URLe zdjęć
+   - Struktura projekrów, oferty, partnerów
+
+2. ✅ content-loader.js - system wczytywania
+   - Wykrywa aktualną stronę
+   - Wczytuje odpowiednie dane
+   - Aktualizuje DOM
+
+3. ✅ Foldery uploads - organizacja grafik
+   - Przygotowane katalogi
+   - Zabezpieczenia .htaccess
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚧 CO WYMAGA BACKEND:
+━━━━━━━━━━━━━━━━━━━
+❌ Upload zdjęć na serwer
+❌ Zapis content.json na serwerze
+❌ Panel admin v3.0 z pełną funkcjonalnością
+❌ Galeria z selektorem zdjęć
+❌ System uprawnień
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 OPCJE IMPLEMENTACJI:
+━━━━━━━━━━━━━━━━━━━━━
+
+OPCJA 1: Kontynuacja z backend PHP
+───────────────────────────────────────
+Zalety:
+✅ Pełna kontrola
+✅ Dostosowane do potrzeb
+✅ Szybkie i wydajne
+
+Wady:
+❌ Czas: 5-7 dni
+❌ Koszt: Developer PHP + frontend
+❌ Utrzymanie kodu
+
+Pliki backend (przykład):
+- upload.php (upload zdjęć)
+- save-content.php (zapis JSON)
+- get-images.php (lista zdjęć z folderu)
+- admin-v3.php (zaawansowany panel)
+
+OPCJA 2: WordPress + ACF (Advanced Custom Fields)
+───────────────────────────────────────
+Zalety:
+✅ Gotowe rozwiązanie
+✅ Graficzny interfejs
+✅ Zarządzanie mediami wbudowane
+✅ Bez programowania
+
+Wady:
+❌ Przepisanie HTML na WP theme
+❌ Hosting WordPress (bardziej zasobożerny)
+❌ Zależność od pluginów
+
+OPCJA 3: Headless CMS (Strapi, Contentful)
+───────────────────────────────────────
+Zalety:
+✅ Nowoczesne rozwiązanie
+✅ API out-of-the-box
+✅ Panel admin gotowy
+
+Wady:
+❌ Koszt: ~$29-99/mies
+❌ Krzywa uczenia
+❌ Integracja z istniejącym HTML
+
+OPCJA 4: Kontynuacja z v2.1 (localStorage)
+───────────────────────────────────────
+Zalety:
+✅ Działa teraz
+✅ Bez backend
+✅ Bez kosztów
+
+Wady:
+❌ Dane tylko w przeglądarce
+❌ Brak prawdziwego upload
+❌ Nie dla zespołu
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 ROADMAP DO PEŁNEGO CMS:
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+KROK 1: Backend API (2 dni)
+────────────────────────────
+- upload.php - upload zdjęć
+- save-content.php - zapis JSON
+- get-images.php - lista zdjęć
+- delete-image.php - usuwanie
+- auth.php - autoryzacja
+
+KROK 2: Panel Admin v3.0 (3 dni)
+─────────────────────────────────
+- Zakładki dla każdej strony
+- Edycja tekstów (inputy/textareas)
+- Przycisk ✏️ przy każdym zdjęciu
+- Modal galerii z miniaturami
+- Upload z drag & drop
+- Zapisywanie do content.json przez API
+
+KROK 3: Integracja Frontend (1 dzień)
+──────────────────────────────────────
+- Dodać <script src="content-loader.js"> do stron
+- Testowanie wczytywania danych
+- Poprawki CSS/struktury
+
+KROK 4: Testy i Deploy (1 dzień)
+─────────────────────────────────
+- Testy na serwerze produkcyjnym
+- Backup content.json
+- Dokumentacja końcowa
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 REKOMENDACJA:
+━━━━━━━━━━━━━━━
+
+Dla ARM-POL zalecamy:
+
+1. KRÓTKOTERMINOWO (teraz):
+   → Użyj panelu v2.1 (działa, localStorage)
+   → Edycja podstawowa (realizacje, teksty)
+
+2. ŚREDNIOTERMINOWO (1-2 tygodnie):
+   → Implementacja backend PHP
+   → Panel v3.0 z pełną funkcjonalnością
+   → System upload + galeria
+
+3. DŁUGOTERMINOWO (1-2 miesiące):
+   → Migracja do WordPress + ACF
+   → Lub własny CMS z bazą danych
+   → Wersjonowanie, historie zmian
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 PLIKI W PAKIECIE:
+━━━━━━━━━━━━━━━━━━
+✅ content.json (struktura danych)
+✅ content-loader.js (wczytywanie)
+✅ PANEL-V3-PLAN.md (pełna dokumentacja)
+✅ admin.html (panel v2.1 - funkcjonalny)
+✅ /uploads/ (foldery z .htaccess)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 JAK UŻYĆ PRZYGOTOWANYCH PLIKÓW:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. EDYCJA content.json RĘCZNIE:
+   - Otwórz content.json w edytorze
+   - Zmień teksty, URLe zdjęć
+   - Zapisz
+
+2. PODPIĘCIE content-loader.js:
+   - Dodaj do każdej strony przed </body>:
+     <script src="/content-loader.js"></script>
+   - Strona automatycznie wczyta dane z content.json
+
+3. TESTOWANIE:
+   - Uruchom na serwerze (nie działa na file://)
+   - Otwórz index.html
+   - Sprawdź Console (F12) - powinno być "✅ Content loaded"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💰 SZACUNKOWE KOSZTY:
+━━━━━━━━━━━━━━━━━━━
+
+OPCJA 1: Backend PHP + Panel v3.0
+- Czas: 5-7 dni
+- Koszt: 3000-5000 PLN
+- Jednorazowy
+
+OPCJA 2: WordPress + ACF
+- Czas: 2-3 dni (przepisanie HTML)
+- Koszt: 1500-2500 PLN
+- + ~30-50 PLN/mies (hosting WP)
+
+OPCJA 3: Headless CMS
+- Czas: 3-4 dni (integracja)
+- Koszt: 2000-3000 PLN
+- + ~$29-99/mies (Strapi/Contentful)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ PODSUMOWANIE:
+━━━━━━━━━━━━━━━
+
+CO MASZ TERAZ:
+✅ Funkcjonalny panel admin v2.1 (localStorage)
+✅ Fundament pod pełny CMS (JSON + loader)
+✅ Struktura folderów uploads
+✅ Pełną dokumentację i plan
+
+CO POTRZEBUJESZ DLA PEŁNEGO CMS:
+❌ Backend PHP (upload, zapis JSON)
+❌ Panel v3.0 (galeria, selektor zdjęć)
+❌ Integracja frontend (dodać content-loader.js)
+
+REKOMENDACJA:
+1. Teraz: Używaj panel v2.1
+2. Za 1-2 tyg: Zlec implementację backend
+3. Lub: Rozważ WordPress + ACF (prostsze)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📞 NASTĘPNE KROKI:
+━━━━━━━━━━━━━━━━
+
+1. Zdecyduj którą opcję chcesz (PHP / WordPress)
+2. Jeśli PHP - znajdź developera (5-7 dni)
+3. Jeśli WordPress - znajdź WP developera (2-3 dni)
+4. Prześlij mu ten pakiet + PANEL-V3-PLAN.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Status: 📋 PLAN GOTOWY | Fundament zbudowany
+Potrzeba: Backend developer (PHP lub WP)
+Czas: 5-7 dni do pełnego CMS
+Koszt: 3000-5000 PLN (jednorazowo)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Dokumentacja: PANEL-V3-PLAN.md
+Kontakt: inwestycje@arm-pol.pl

@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "lastUpdate": "2026-02-06",
+    "version": "3.0"
+  },
+  "home": {
+    "hero": {
+      "title": "Kompleksowe rozwiązania w inwestycjach sektora medycznego",
+      "subtitle": "Od koncepcji po realizację – Twój partner w budownictwie medycznym",
+      "buttonText": "Zobacz nasze realizacje",
+      "buttonLink": "realizacje.html",
+      "backgroundImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1500&q=80"
+    },
+    "about": {
+      "title": "O ARM-POL Budownictwo",
+      "content": "Jesteśmy specjalistami w realizacji inwestycji medycznych. Od ponad 15 lat dostarczamy kompleksowe rozwiązania dla placówek medycznych w całej Polsce. Nasza misja to tworzenie nowoczesnych, funkcjonalnych przestrzeni medycznych, które wspierają najwyższą jakość opieki zdrowotnej."
+    },
+    "stats": {
+      "years": 15,
+      "projects": 120,
+      "specialists": 45,
+      "satisfaction": 98
+    }
+  },
+  "about": {
+    "pageTitle": "O ARM-POL Budownictwo",
+    "mission": "Jesteśmy wiodącym wykonawcą inwestycji w sektorze medycznym, łącząc doświadczenie, innowacyjność i profesjonalizm. Od ponad 15 lat realizujemy projekty dla placówek medycznych w całej Polsce, dbając o najwyższą jakość wykonania i terminowość realizacji.",
+    "values": [
+      {
+        "icon": "⚡",
+        "title": "Profesjonalizm",
+        "description": "Zespół doświadczonych specjalistów"
+      },
+      {
+        "icon": "🚀",
+        "title": "Innowacyjność",
+        "description": "Nowoczesne technologie i rozwiązania"
+      },
+      {
+        "icon": "🤝",
+        "title": "Partnerstwo",
+        "description": "Długofalowa współpraca z klientami"
+      },
+      {
+        "icon": "✓",
+        "title": "Jakość",
+        "description": "Najwyższe standardy wykonania"
+      }
+    ]
+  },
+  "offer": {
+    "items": [
+      {
+        "id": "offer1",
+        "icon": "🏗️",
+        "title": "Inwestycje medyczne",
+        "description": "Kompleksowa obsługa inwestycji od koncepcji po realizację, zarządzanie projektem, harmonogramy i budżety."
+      },
+      {
+        "id": "offer2",
+        "icon": "⚕️",
+        "title": "Montaż urządzeń diagnostyki medycznej",
+        "description": "Profesjonalny montaż aparatury diagnostycznej: MRI, TK, RTG, mammografia, USG, angiografia."
+      },
+      {
+        "id": "offer3",
+        "icon": "🔧",
+        "title": "Generalne wykonawstwo",
+        "description": "Budowa i modernizacja obiektów medycznych w pełnym zakresie robót budowlanych i instalacyjnych."
+      },
+      {
+        "id": "offer4",
+        "icon": "📐",
+        "title": "Projektowanie i doradztwo",
+        "description": "Usługi projektowe i doradztwo techniczne dla inwestycji medycznych."
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Centrum Diagnostyczne Warszawa",
+      "year": 2023,
+      "budget": "12 000 000 PLN",
+      "area": "3500 m²",
+      "description": "Kompleksowa budowa centrum diagnostycznego z montażem urządzeń MRI, TK i RTG. Wykończenia premium, systemy IT medyczne, 45 gabinetów specjalistycznych.",
+      "image": "https://images.unsplash.com/photo-1581093588401-22f4a6e4c8ba?w=600",
+      "gallery": [
+        "https://images.unsplash.com/photo-1581093588401-22f4a6e4c8ba?w=1200",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Szpital Powiatowy Kraków",
+      "year": 2022,
+      "budget": "8 000 000 PLN",
+      "area": "2800 m²",
+      "description": "Modernizacja oddziału chirurgii i instalacja nowych urządzeń medycznych. Remont sal operacyjnych, wymiana instalacji.",
+      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Prywatna Klinika Gdańsk",
+      "year": 2023,
+      "budget": "5 000 000 PLN",
+      "area": "1500 m²",
+      "description": "Budowa ekskluzywnej kliniki medycyny estetycznej i regeneracyjnej. Wykończenia premium, nowoczesne gabinety zabiegowe, sale hospitalizacji jednoosobowej, SPA medyczne.",
+      "image": "https://images.unsplash.com/photo-1584985209857-a58c4b3cda82?w=600",
+      "gallery": [
+        "https://images.unsplash.com/photo-1584985209857-a58c4b3cda82?w=1200"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Laboratorium Diagnostyczne Wrocław",
+      "year": 2022,
+      "budget": "3 000 000 PLN",
+      "area": "800 m²",
+      "description": "Adaptacja budynku biurowego na laboratorium medyczne. Instalacja pomieszczeń czystych, systemy HVAC dedykowane, automatyka laboratoryjna, system pneumatycznej poczty próbek.",
+      "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600",
+      "gallery": [
+        "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Oddział Chirurgii Poznań",
+      "year": 2021,
+      "budget": "6 000 000 PLN",
+      "area": "2000 m²",
+      "description": "Rozbudowa i modernizacja oddziału chirurgii z nowym blokiem operacyjnym. 4 sale operacyjne z zapleczem, pomieszczenia intensywnej opieki pooperacyjnej.",
+      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Centrum Rehabilitacji Łódź",
+      "year": 2023,
+      "budget": "4 000 000 PLN",
+      "area": "1800 m²",
+      "description": "Budowa specjalistycznego centrum rehabilitacji ortopedycznej. Sale fizjoterapii, basen rehabilitacyjny, siłownia medyczna, gabinety zabiegowe, pomieszczenia diagnostyczne.",
+      "image": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600",
+      "gallery": [
+        "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1200"
+      ]
+    }
+  ],
+  "partners": [
+    {
+      "id": "partner1",
+      "name": "Siemens Healthineers",
+      "logo": "",
+      "description": "Strategiczny partner w dostawie i montażu zaawansowanych systemów diagnostycznych.",
+      "since": "2015"
+    },
+    {
+      "id": "partner2",
+      "name": "GE Healthcare",
+      "logo": "",
+      "description": "Współpraca przy instalacji urządzeń obrazowania medycznego najnowszej generacji.",
+      "since": "2016"
+    }
+  ],
+  "contact": {
+    "company": "ARM-POL Budownictwo Sp. z o.o.",
+    "address": "ul. Szwoleżerów 128/66",
+    "city": "05-091 Ząbki",
+    "phone": "+48 506 978 879",
+    "email": "inwestycje@arm-pol.pl",
+    "nip": "",
+    "regon": "",
+    "krs": "",
+    "mapsUrl": "https://www.google.com/maps/place/Szwoleżerów+128,+05-091+Ząbki"
+  }
+}

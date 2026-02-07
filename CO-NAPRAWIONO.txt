@@ -1,0 +1,69 @@
+✅ ARM-POL BUDOWNICTWO - PAKIET v2.1 (NAPRAWIONY)
+====================================================
+
+📅 Data: 6 lutego 2026 | Wersja: 2.1
+🎯 Status: GOTOWE DO WDROŻENIA
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 NAPRAWIONO W v2.1:
+━━━━━━━━━━━━━━━━━━
+✅ PROBLEM: Panel pokazywał tylko 2 realizacje
+✅ ROZWIĄZANIE: 
+   - Dodano przycisk "🔄 Reset do 6 domyślnych"
+   - Dodano licznik projektów (X)
+   - Funkcja resetProjects() ładuje 6 projektów
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔐 PANEL ADMINISTRATORA:
+━━━━━━━━━━━━━━━━━━━━━━━
+✅ URL: https://armpolbudownictwo.pl/admin.html
+✅ Login: armpoldev1
+✅ Hasło: haslotestowe123
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 JAK NAPRAWIĆ (JEŚLI WIDZISZ TYLKO 2 PROJEKTY):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Zaloguj się do panelu
+2. Zakładka "🏗️ Realizacje"
+3. Kliknij "🔄 Reset do 6 domyślnych" (pomarańczowy)
+4. Potwierdź
+5. Gotowe! Zobaczysz wszystkie 6 projektów
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 6 DOMYŚLNYCH PROJEKTÓW:
+━━━━━━━━━━━━━━━━━━━━━━━
+✅ Centrum Diagnostyczne Warszawa (2023, 12 mln, 3500 m²)
+✅ Szpital Powiatowy Kraków (2022, 8 mln, 2800 m²)
+✅ Prywatna Klinika Gdańsk (2023, 5 mln, 1500 m²)
+✅ Laboratorium Wrocław (2022, 3 mln, 800 m²)
+✅ Oddział Chirurgii Poznań (2021, 6 mln, 2000 m²)
+✅ Centrum Rehabilitacji Łódź (2023, 4 mln, 1800 m²)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ CHANGELOG:
+━━━━━━━━━━━
+v2.1 → NAPRAWIONO: Wyświetlanie tylko 2 projektów
+       DODANO: Przycisk reset + licznik
+v2.0 → Dodano edycję wszystkich zakładek (6 sekcji)
+v1.0 → Naprawiono problem z nakładaniem tekstu
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 6 ZAKŁADEK:
+━━━━━━━━━━━━
+1. 🏗️ Realizacje (NAPRAWIONE! + licznik + reset)
+2. 🏠 Strona główna
+3. 👥 O nas
+4. 💼 Oferta
+5. 🤝 Partnerzy
+6. 📞 Kontakt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STATUS: v2.1 GOTOWA!
+Powodzenia! 🚀

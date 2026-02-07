@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ARM-POL Budownictwo - kompleksowa oferta dla sektora medycznego">
+    <title>Oferta - ARM-POL Budownictwo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root[data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #fafafa;
+            --text-primary: #222222;
+            --text-secondary: #666666;
+            --accent-color: #C40000;
+            --border-color: #dddddd;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+            --overlay: rgba(0,0,0,0.5);
+        }
+        
+        :root[data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-color: #ff3333;
+            --border-color: #404040;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+            --overlay: rgba(0,0,0,0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        html {
+    scroll-padding-top: 90px;
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            background: var(--bg-primary);
+            padding: 20px 0;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo:hover {
+            opacity: 0.8;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 5px 12px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .page-hero {
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('uploads/hero/hero-medical.jpg') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .page-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+        
+        section {
+    scroll-margin-top: 90px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .services-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+        
+        .service-detail:nth-child(even) .service-content {
+            order: 2;
+        }
+        
+        .service-detail:nth-child(even) .service-image {
+            order: 1;
+        }
+        
+        .service-content h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .service-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .service-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .service-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+        
+        .service-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .service-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-section {
+    scroll-margin-top: 90px;
+            background: var(--bg-secondary);
+            padding: 60px 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .cta-section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+        }
+        
+        .cta-button {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #a00000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(196, 0, 0, 0.3);
+        }
+        
+        footer {
+            background: var(--bg-secondary);
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: 0.3s;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 70px;
+                background: var(--bg-primary);
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-md);
+            }
+            
+            .nav-links.active {
+                max-height: 400px;
+                padding: 20px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            
+            .service-detail {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-detail:nth-child(even) .service-content {
+                order: 1;
+            }
+            
+            .service-detail:nth-child(even) .service-image {
+                order: 2;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./" class="logo">ARM-POL</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./">STRONA GŁÓWNA</a></li>
+                <li><a href="o-nas.html">O NAS</a></li>
+                <li><a href="oferta.html">OFERTA</a></li>
+                <li><a href="realizacje.html">REALIZACJE</a></li>
+                <li><a href="partnerzy.html">PARTNERZY</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-hero" data-aos="fade">
+        <h1 data-aos="fade-down">Nasza oferta</h1>
+    </div>
+
+    <section>
+        <div class="services-intro" data-aos="fade-up">
+            <p>Oferujemy kompleksowe rozwiązania dla sektora medycznego - od koncepcji i projektowania, przez wykonawstwo, aż po montaż wyposażenia i szkolenie personelu. Nasze usługi dostosowujemy do indywidualnych potrzeb każdej placówki medycznej.</p>
+        </div>
+
+        <div class="service-detail">
+            <div class="service-content" data-aos="fade-right">
+                <h3>Inwestycje medyczne</h3>
+                <p>Kompleksowa obsługa inwestycji medycznych od etapu koncepcji po pełne uruchomienie obiektu. Zajmujemy się całym procesem inwestycyjnym, dbając o każdy szczegół i zapewniając płynną realizację projektu.</p>
+                <ul class="service-list">
+                    <li data-aos="fade-up" data-aos-delay="100">Koncepcja i analiza wykonalności projektu</li>
+                    <li data-aos="fade-up" data-aos-delay="150">Dokumentacja przedprojektowa i projektowa</li>
+                    <li data-aos="fade-up" data-aos-delay="200">Projekty "pod klucz" dla placówek medycznych</li>
+                    <li data-aos="fade-up" data-aos-delay="250">Nadzór inwestorski i zarządzanie projektem</li>
+                    <li data-aos="fade-up" data-aos-delay="300">Wsparcie w pozyskaniu finansowania</li>
+                    <li data-aos="fade-up" data-aos-delay="350">Zarządzanie harmonogramem i budżetem</li>
+                </ul>
+            </div>
+            <div class="service-image" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=800&q=80" 
+                     alt="Inwestycje medyczne" loading="lazy">
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <div class="service-content" data-aos="fade-left">
+                <h3>Montaż urządzeń diagnostycznych</h3>
+                <p>Profesjonalny montaż i uruchomienie zaawansowanej aparatury medycznej. Współpracujemy z czołowymi producentami sprzętu medycznego, gwarantując najwyższe standardy instalacji.</p>
+                <ul class="service-list">
+                    <li data-aos="fade-up" data-aos-delay="100">Rezonans magnetyczny (MRI)</li>
+                    <li data-aos="fade-up" data-aos-delay="150">Tomograf komputerowy (TK/CT)</li>
+                    <li data-aos="fade-up" data-aos-delay="200">Aparaty rentgenowskie (RTG)</li>
+                    <li data-aos="fade-up" data-aos-delay="250">Mammografia</li>
+                    <li data-aos="fade-up" data-aos-delay="300">Ultrasonografia (USG)</li>
+                    <li data-aos="fade-up" data-aos-delay="350">Angiografia</li>
+                    <li data-aos="fade-up" data-aos-delay="400">Przygotowanie pomieszczeń technicznych</li>
+                    <li data-aos="fade-up" data-aos-delay="450">Integracja z systemami IT</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Szkolenia personelu medycznego</li>
+                </ul>
+            </div>
+            <div class="service-image" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" 
+                     alt="Urządzenia diagnostyczne" loading="lazy">
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <div class="service-content" data-aos="fade-right">
+                <h3>Generalne wykonawstwo budowlane</h3>
+                <p>Budowa i modernizacja obiektów medycznych w pełnym zakresie robót budowlanych. Realizujemy projekty zgodnie z najsurowszymi normami dla placówek służby zdrowia.</p>
+                <ul class="service-list">
+                    <li data-aos="fade-up" data-aos-delay="100">Budowa nowych placówek medycznych</li>
+                    <li data-aos="fade-up" data-aos-delay="150">Modernizacja istniejących obiektów</li>
+                    <li data-aos="fade-up" data-aos-delay="200">Adaptacje pomieszczeń na cele medyczne</li>
+                    <li data-aos="fade-up" data-aos-delay="250">Systemy wentylacji i klimatyzacji (HVAC)</li>
+                    <li data-aos="fade-up" data-aos-delay="300">Instalacje wodno-kanalizacyjne</li>
+                    <li data-aos="fade-up" data-aos-delay="350">Instalacje elektryczne i niskoprądowe</li>
+                    <li data-aos="fade-up" data-aos-delay="400">Instalacje gazów medycznych</li>
+                    <li data-aos="fade-up" data-aos-delay="450">Wykończenia w standardzie medycznym</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Systemy przeciwpożarowe i BHP</li>
+                </ul>
+            </div>
+            <div class="service-image" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" 
+                     alt="Generalne wykonawstwo" loading="lazy">
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <div class="service-content" data-aos="fade-left">
+                <h3>Projektowanie i doradztwo</h3>
+                <p>Kompleksowe usługi projektowe i doradcze dla inwestycji medycznych. Nasz zespół ekspertów wspiera inwestorów na każdym etapie planowania i realizacji projektu.</p>
+                <ul class="service-list">
+                    <li data-aos="fade-up" data-aos-delay="100">Projekty koncepcyjne i wykonawcze</li>
+                    <li data-aos="fade-up" data-aos-delay="150">Optymalizacja układów funkcjonalnych</li>
+                    <li data-aos="fade-up" data-aos-delay="200">Dobór technologii i materiałów</li>
+                    <li data-aos="fade-up" data-aos-delay="250">Analizy techniczno-ekonomiczne</li>
+                    <li data-aos="fade-up" data-aos-delay="300">Analiza kosztów inwestycji</li>
+                    <li data-aos="fade-up" data-aos-delay="350">Doradztwo w zakresie przepisów</li>
+                    <li data-aos="fade-up" data-aos-delay="400">Audyty techniczne obiektów</li>
+                    <li data-aos="fade-up" data-aos-delay="450">Wsparcie w procedurach administracyjnych</li>
+                </ul>
+            </div>
+            <div class="service-image" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" 
+                     alt="Projektowanie" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="cta-section" data-aos="zoom-in">
+            <h3>Zainteresowany naszą ofertą?</h3>
+            <p>Skontaktuj się z nami, aby omówić szczegóły Twojego projektu</p>
+            <a href="kontakt.html" class="cta-button">Skontaktuj się</a>
+        </div>
+    </section>
+
+    <footer data-aos="fade-up">
+        <p>&copy; 2024 ARM-POL Budownictwo Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            offset: 120,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: true
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        });
+
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ARM-POL Budownictwo - nasi partnerzy technologiczni w sektorze medycznym">
+    <title>Partnerzy - ARM-POL Budownictwo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root[data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #fafafa;
+            --text-primary: #222222;
+            --text-secondary: #666666;
+            --accent-color: #C40000;
+            --border-color: #dddddd;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+            --overlay: rgba(0,0,0,0.5);
+        }
+        
+        :root[data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-color: #ff3333;
+            --border-color: #404040;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+            --overlay: rgba(0,0,0,0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        html {
+    scroll-padding-top: 90px;
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            background: var(--bg-primary);
+            padding: 20px 0;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo:hover {
+            opacity: 0.8;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 5px 12px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .page-hero {
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('uploads/hero/hero-modern.jpg') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .page-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+        
+        section {
+    scroll-margin-top: 90px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .partners-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .partner-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+            background: var(--bg-secondary);
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .partner-logo-large {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo-large:hover {
+            transform: scale(1.05);
+        }
+        
+        [data-theme="dark"] .partner-logo-large {
+            filter: brightness(0) invert(1);
+        }
+        
+        .partner-content h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .partner-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .products-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .products-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+        
+        .products-list li:before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 20px;
+        }
+        
+        .benefits-section {
+    scroll-margin-top: 90px;
+            background: var(--bg-secondary);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-box {
+            background: var(--bg-primary);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-box:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+        
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-box h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .benefit-box p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        footer {
+            background: var(--bg-secondary);
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: 0.3s;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 70px;
+                background: var(--bg-primary);
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-md);
+            }
+            
+            .nav-links.active {
+                max-height: 400px;
+                padding: 20px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            
+            .partner-card {
+                grid-template-columns: 1fr;
+                padding: 40px 30px;
+                gap: 40px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./" class="logo">ARM-POL</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./">STRONA GŁÓWNA</a></li>
+                <li><a href="o-nas.html">O NAS</a></li>
+                <li><a href="oferta.html">OFERTA</a></li>
+                <li><a href="realizacje.html">REALIZACJE</a></li>
+                <li><a href="partnerzy.html">PARTNERZY</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-hero" data-aos="fade">
+        <h1 data-aos="fade-down">Nasi partnerzy</h1>
+    </div>
+
+    <section>
+        <div class="partners-intro" data-aos="fade-up">
+            <p>Współpracujemy z wiodącymi producentami sprzętu medycznego, co pozwala nam dostarczać rozwiązania najwyższej jakości. Nasze długoletnie partnerstwa gwarantują dostęp do najnowszych technologii i profesjonalne wsparcie techniczne.</p>
+        </div>
+
+        <div class="partner-card" data-aos="fade-up">
+            <div>
+                <img src="https://logo.clearbit.com/siemens.com" 
+                     alt="Siemens Healthineers" class="partner-logo-large" loading="lazy">
+            </div>
+            <div class="partner-content">
+                <h3>Siemens Healthineers</h3>
+                <p>
+                    Siemens Healthineers to globalny lider w technologiach medycznych. Jesteśmy autoryzowanym partnerem 
+                    w zakresie instalacji i serwisu urządzeń diagnostycznych. Współpraca z Siemens pozwala nam oferować 
+                    najnowocześniejsze rozwiązania obrazowania medycznego.
+                </p>
+                <h4 style="color: var(--text-primary); margin-top: 30px; margin-bottom: 15px;">Główne produkty:</h4>
+                <ul class="products-list">
+                    <li data-aos="fade-right" data-aos-delay="100">Rezonans magnetyczny (MRI) - seria MAGNETOM</li>
+                    <li data-aos="fade-right" data-aos-delay="150">Tomografia komputerowa (CT) - seria SOMATOM</li>
+                    <li data-aos="fade-right" data-aos-delay="200">Aparaty rentgenowskie - seria AXIOM</li>
+                    <li data-aos="fade-right" data-aos-delay="250">Angiografia - seria ARTIS</li>
+                    <li data-aos="fade-right" data-aos-delay="300">Mammografia - seria MAMMOMAT</li>
+                    <li data-aos="fade-right" data-aos-delay="350">Systemy ultrasonograficzne - seria ACUSON</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="partner-card" data-aos="fade-up">
+            <div>
+                <img src="https://logo.clearbit.com/gehealthcare.com" 
+                     alt="GE Healthcare" class="partner-logo-large" loading="lazy">
+            </div>
+            <div class="partner-content">
+                <h3>GE Healthcare</h3>
+                <p>
+                    GE Healthcare to jeden z największych dostawców technologii medycznych na świecie. Nasza współpraca 
+                    obejmuje dostawę, instalację i serwis szerokiej gamy urządzeń diagnostycznych. GE Healthcare wyróżnia 
+                    się innowacyjnością i niezawodnością swoich produktów.
+                </p>
+                <h4 style="color: var(--text-primary); margin-top: 30px; margin-bottom: 15px;">Główne produkty:</h4>
+                <ul class="products-list">
+                    <li data-aos="fade-left" data-aos-delay="100">Rezonans magnetyczny (MRI) - seria SIGNA</li>
+                    <li data-aos="fade-left" data-aos-delay="150">Tomografia komputerowa (CT) - seria Revolution</li>
+                    <li data-aos="fade-left" data-aos-delay="200">Aparaty rentgenowskie - seria Optima</li>
+                    <li data-aos="fade-left" data-aos-delay="250">Angiografia - seria Innova</li>
+                    <li data-aos="fade-left" data-aos-delay="300">Mammografia - seria Senographe</li>
+                    <li data-aos="fade-left" data-aos-delay="350">Systemy ultrasonograficzne - seria LOGIQ</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <h2 data-aos="fade-down">Korzyści ze współpracy</h2>
+        <div class="benefits-grid">
+            <div class="benefit-box" data-aos="zoom-in">
+                <div class="benefit-icon">🏆</div>
+                <h4>Jakość premium</h4>
+                <p>Dostęp do sprzętu medycznego najwyższej klasy od światowych liderów branży</p>
+            </div>
+            <div class="benefit-box" data-aos="zoom-in" data-aos-delay="100">
+                <div class="benefit-icon">🔧</div>
+                <h4>Wsparcie techniczne</h4>
+                <p>Profesjonalny serwis i wsparcie techniczne bezpośrednio od producentów</p>
+            </div>
+            <div class="benefit-box" data-aos="zoom-in" data-aos-delay="200">
+                <div class="benefit-icon">📚</div>
+                <h4>Szkolenia</h4>
+                <p>Kompleksowe szkolenia dla personelu medycznego z obsługi urządzeń</p>
+            </div>
+            <div class="benefit-box" data-aos="zoom-in" data-aos-delay="300">
+                <div class="benefit-icon">⚡</div>
+                <h4>Najnowsze technologie</h4>
+                <p>Dostęp do najnowszych rozwiązań technologicznych w diagnostyce medycznej</p>
+            </div>
+            <div class="benefit-box" data-aos="zoom-in" data-aos-delay="400">
+                <div class="benefit-icon">✓</div>
+                <h4>Gwarancja</h4>
+                <p>Pełna gwarancja producenta i dostęp do oryginalnych części zamiennych</p>
+            </div>
+            <div class="benefit-box" data-aos="zoom-in" data-aos-delay="500">
+                <div class="benefit-icon">🤝</div>
+                <h4>Partnerstwo</h4>
+                <p>Długoterminowe relacje biznesowe z wiodącymi producentami</p>
+            </div>
+        </div>
+    </section>
+
+    <footer data-aos="fade-up">
+        <p>&copy; 2024 ARM-POL Budownictwo Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            offset: 120,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: true
+        });
+
+        // Pulse effect for logos when visible
+        const logoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'pulse 2s ease-in-out';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.partner-logo-large').forEach(logo => {
+            logoObserver.observe(logo);
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        });
+
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

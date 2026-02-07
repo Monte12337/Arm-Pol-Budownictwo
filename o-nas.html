@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ARM-POL Budownictwo - poznaj naszą firmę i zespół specjalistów">
+    <title>O nas - ARM-POL Budownictwo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root[data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #fafafa;
+            --text-primary: #222222;
+            --text-secondary: #666666;
+            --accent-color: #C40000;
+            --border-color: #dddddd;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+            --overlay: rgba(0,0,0,0.5);
+        }
+        
+        :root[data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-color: #ff3333;
+            --border-color: #404040;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+            --overlay: rgba(0,0,0,0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        html {
+    scroll-padding-top: 90px;
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            background: var(--bg-primary);
+            padding: 20px 0;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo:hover {
+            opacity: 0.8;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 5px 12px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .page-hero {
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('uploads/hero/hero-hospital.jpg') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .page-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+        
+        section {
+    scroll-margin-top: 90px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .about-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .content-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .content-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+        
+        .content-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .stats-section {
+    scroll-margin-top: 90px;
+            background: var(--bg-secondary);
+            padding: 60px 20px;
+            border-radius: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stat-box {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+        
+        .values-section {
+    scroll-margin-top: 90px;
+            background: var(--bg-secondary);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-box {
+            background: var(--bg-primary);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .value-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .value-box h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .value-box p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        footer {
+            background: var(--bg-secondary);
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: 0.3s;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 70px;
+                background: var(--bg-primary);
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-md);
+            }
+            
+            .nav-links.active {
+                max-height: 400px;
+                padding: 20px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./" class="logo">ARM-POL</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./">STRONA GŁÓWNA</a></li>
+                <li><a href="o-nas.html">O NAS</a></li>
+                <li><a href="oferta.html">OFERTA</a></li>
+                <li><a href="realizacje.html">REALIZACJE</a></li>
+                <li><a href="partnerzy.html">PARTNERZY</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-hero" data-aos="fade">
+        <h1 data-aos="fade-down">O nas</h1>
+    </div>
+
+    <section>
+        <div class="about-intro" data-aos="fade-up">
+            <p>ARM-POL Budownictwo to firma z wieloletnim doświadczeniem w branży budowlanej, specjalizująca się w kompleksowych inwestycjach dla sektora medycznego. Nasze projekty to połączenie najwyższej jakości wykonawstwa z głęboką wiedzą o specyficznych wymaganiach infrastruktury medycznej.</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-text" data-aos="fade-right">
+                <h3>Nasza misja</h3>
+                <p>Tworzymy nowoczesne przestrzenie medyczne, które służą zdrowiu pacjentów i ułatwiają pracę personelowi medycznemu. Każdy projekt traktujemy indywidualnie, dostosowując rozwiązania do specyficznych potrzeb placówki.</p>
+                <p>Realizujemy inwestycje od etapu koncepcji, przez projektowanie i wykonawstwo, aż po montaż wyposażenia medycznego i szkolenie personelu. Nasza kompleksowa obsługa gwarantuje terminowość i przestrzeganie budżetu.</p>
+            </div>
+            <div class="content-image" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" 
+                     alt="Zespół ARM-POL" loading="lazy">
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-image" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" 
+                     alt="Doświadczenie" loading="lazy">
+            </div>
+            <div class="content-text" data-aos="fade-left">
+                <h3>Nasze doświadczenie</h3>
+                <p>Przez lata współpracy z wiodącymi placówkami medycznymi zdobyliśmy unikalne kompetencje w realizacji projektów o najwyższych standardach. Współpracujemy z renomowanymi producentami sprzętu medycznego takimi jak Siemens Healthineers i GE Healthcare.</p>
+                <p>Zrealizowaliśmy ponad 100 projektów dla szpitali, przychodni i centrów diagnostycznych w całej Polsce. Nasze realizacje wyróżniają się profesjonalizmem, dbałością o detale i terminowością.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2 data-aos="fade-down">ARM-POL w liczbach</h2>
+        <div class="stats-grid">
+            <div class="stat-box" data-aos="zoom-in">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Lat doświadczenia</div>
+            </div>
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stat-number" data-target="120">0</div>
+                <div class="stat-label">Zrealizowanych projektów</div>
+            </div>
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="200">
+                <div class="stat-number" data-target="45">0</div>
+                <div class="stat-label">Specjalistów w zespole</div>
+            </div>
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="300">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">% zadowolonych klientów</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <h2 data-aos="fade-down">Nasze wartości</h2>
+        <div class="values-grid">
+            <div class="value-box" data-aos="flip-left">
+                <div class="value-icon">🎯</div>
+                <h3>Profesjonalizm</h3>
+                <p>Każdy projekt realizujemy z najwyższą starannością, dbając o wszystkie szczegóły i przestrzegając obowiązujących norm.</p>
+            </div>
+            <div class="value-box" data-aos="flip-left" data-aos-delay="100">
+                <div class="value-icon">⚡</div>
+                <h3>Innowacyjność</h3>
+                <p>Stosujemy najnowsze technologie i rozwiązania, aby nasze projekty były funkcjonalne i nowoczesne.</p>
+            </div>
+            <div class="value-box" data-aos="flip-left" data-aos-delay="200">
+                <div class="value-icon">🤝</div>
+                <h3>Partnerstwo</h3>
+                <p>Budujemy długotrwałe relacje z klientami oparte na zaufaniu, przejrzystości i wzajemnym szacunku.</p>
+            </div>
+            <div class="value-box" data-aos="flip-left" data-aos-delay="300">
+                <div class="value-icon">✓</div>
+                <h3>Jakość</h3>
+                <p>Najwyższa jakość wykonawstwa i materiałów to podstawa naszej działalności. Nie idziemy na kompromisy.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer data-aos="fade-up">
+        <p>&copy; 2024 ARM-POL Budownictwo Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            offset: 120,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: true
+        });
+
+        // Counter animation
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCounter();
+            });
+        };
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        });
+
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

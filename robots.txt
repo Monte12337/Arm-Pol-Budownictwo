@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Blokowanie zasobów tymczasowych
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /cache/
+
+# Mapa strony
+Sitemap: https://twoja-domena.pl/sitemap.xml
